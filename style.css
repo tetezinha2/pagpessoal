@@ -1,96 +1,157 @@
-/* Definição de uma cor roxo claro para uso fácil */
-:root {
-    --light-purple: #D8BFD8; /* Thistle - Roxo Claro */
-    --text-color: #333;
-    --background-color: #f4f4f9;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color);
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #f8f4ff 0%, #e8d5ff 100%);
+    min-height: 100%;
+    color: #4a4a4a;
+}
+
+html {
+    height: 100%;
 }
 
 .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.header {
     text-align: center;
-    background-color: #fff;
+    margin-bottom: 50px;
     padding: 30px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(138, 43, 226, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #8a2be2;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(138, 43, 226, 0.2);
+    letter-spacing: 2px;
+}
+
+.navigation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.nav-button {
+    background: linear-gradient(145deg, #9370db, #8a2be2);
+    color: white;
+    border: none;
+    padding: 15px 25px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 400px;
-    position: relative; /* Para posicionar o elemento de animação */
-}
-
-/* Estilo da Foto de Perfil */
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* Torna a imagem redonda */
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 5px solid var(--light-purple); /* Borda roxo claro */
-}
-
-.profile-card h1 {
-    color: var(--text-color);
-    margin-bottom: 5px;
-}
-
-.profile-card p {
-    color: #666;
-    font-style: italic;
-}
-
-/* Estilo dos Links Sociais */
-.social-links {
-    margin-top: 25px;
-}
-
-.social-icon {
-    display: inline-block;
-    color: #fff; /* Cor do ícone */
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 24px;
-    border-radius: 50%;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Transição para o hover */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Cores de fundo dos ícones */
-.instagram {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-}
-.whatsapp {
-    background-color: #25D366;
-}
-.spotify {
-    background-color: #1DB954;
-}
-
-/* Efeito Hover (passar o mouse) - Roxo Claro como feedback */
-.social-icon:hover {
-    transform: translateY(-5px) scale(1.1); /* Animação simples ao passar o mouse */
-    background-color: var(--light-purple); /* Feedback com a cor roxo claro */
-}
-
-
-/* Estilo para o elemento de animação JavaScript */
-#animacao-box {
-    width: 50px;
-    height: 50px;
-    background-color: var(--light-purple);
-    border-radius: 8px;
-    margin: 20px auto;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 0 10px var(--light-purple);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+    background: linear-gradient(145deg, #8a2be2, #7b68ee);
+}
+
+.nav-button.active {
+    background: linear-gradient(145deg, #7b68ee, #6a5acd);
+    transform: translateY(-2px);
+}
+
+.content-section {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(138, 43, 226, 0.15);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(138, 43, 226, 0.1);
+    display: none;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #8a2be2;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #8a2be2, #9370db);
+    border-radius: 2px;
+}
+
+.section-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #5a5a5a;
+    text-align: center;
+    padding: 20px;
+    background: rgba(138, 43, 226, 0.05);
+    border-radius: 15px;
+    border-left: 4px solid #8a2be2;
+}
+
+.decorative-element {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.heart-icon {
+    font-size: 2rem;
+    color: #8a2be2;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .navigation {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-section {
+        padding: 25px;
+    }
 }
