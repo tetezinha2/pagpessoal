@@ -31,7 +31,7 @@ html {
 .main-title {
     font-size: 3.5rem;
     font-weight: bold;
-    color: #8a2be2;
+    color: #c78bff;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(138, 43, 226, 0.2);
     letter-spacing: 2px;
@@ -45,7 +45,7 @@ html {
 }
 
 .nav-button {
-    background: linear-gradient(145deg, #9370db, #8a2be2);
+    background: linear-gradient(145deg, #9370db, #c382ff);
     color: white;
     border: none;
     padding: 15px 25px;
@@ -62,11 +62,11 @@ html {
 .nav-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
-    background: linear-gradient(145deg, #8a2be2, #7b68ee);
+    background: linear-gradient(145deg, #c280ff, #7b68ee);
 }
 
 .nav-button.active {
-    background: linear-gradient(145deg, #7b68ee, #6a5acd);
+    background: linear-gradient(145deg, #9b8cf5, #7e6fdd);
     transform: translateY(-2px);
 }
 
@@ -92,7 +92,7 @@ html {
 
 .section-title {
     font-size: 2.2rem;
-    color: #8a2be2;
+    color: #bc7df7;
     margin-bottom: 25px;
     text-align: center;
     font-weight: bold;
@@ -107,7 +107,7 @@ html {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, #8a2be2, #9370db);
+    background: linear-gradient(90deg, #c688ff, #9370db);
     border-radius: 2px;
 }
 
@@ -119,7 +119,7 @@ html {
     padding: 20px;
     background: rgba(138, 43, 226, 0.05);
     border-radius: 15px;
-    border-left: 4px solid #8a2be2;
+    border-left: 4px solid #c384ff;
 }
 
 .decorative-element {
@@ -129,7 +129,7 @@ html {
 
 .heart-icon {
     font-size: 2rem;
-    color: #8a2be2;
+    color: #c688ff;
     animation: pulse 2s infinite;
 }
 
